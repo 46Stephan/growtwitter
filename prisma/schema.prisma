@@ -9,3 +9,47 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Usuario {
+  id          String @id @default(uuid()) @db.Uuid
+  nome        String @db.VarChar(50)
+  nomeUsuario String @map("nome_usuario") @db.VarChar(50)
+  email       String @unique @db.VarChar(50)
+  senha       String @db.VarChar(50)
+
+  token  String?
+  tweets Tweet[]
+
+  dtHrCriacao     DateTime @default(now()) @map("Dt_hr_criacao")
+  dtHrAtualizacao DateTime @updatedAt @map("Dt_hr_atualizacao")
+
+  @@map("usuario")
+}
+
+model Tweet {
+  id        String @id @default(uuid()) @db.Uuid
+  idUsuario String @map("id_usuario") @db.Uuid
+  conteudo  String @db.Text
+  tipoTweet String @map("tipo_tweet") @db.Char(2)
+
+  usuarioId Usuario @relation(fields: [idUsuario], references: [id])
+
+  like Like?
+
+  dtHrCriacao     DateTime @default(now()) @map("Dt_hr_criacao")
+  dtHrAtualizacao DateTime @updatedAt @map("Dt_hr_atualizacao")
+
+  @@map("tweet")
+}
+
+model Like {
+  idUsuario String @map("id_usuario") @db.Uuid
+  idTweet   String @id @default(uuid()) @db.Uuid
+
+  tweet Tweet @relation(fields: [idTweet], references: [id])
+
+  dtHrCriacao     DateTime @default(now()) @map("Dt_hr_criacao")
+  dtHrAtualizacao DateTime @updatedAt @map("Dt_hr_atualizacao")
+
+  @@map("like")
+}
