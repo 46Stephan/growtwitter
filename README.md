@@ -5,11 +5,11 @@ Clone o repositório usando o seguinte comando:<br>
 <i>git clone</i>: https://github.com/46Stephan/growtwitter.git
 <br><br>
 Navegue até o diretório do projeto:<br> cd growtwitter 
-<br>
-Instale as dependências:<br> npm install
-<br>
-Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 <br><br>
-<b>Uso</b>:<br>
+Instale as dependências:<br> npm install
+<br><br>
+Certifique-se de ter o Node.js e o npm instalados em sua máquina.
+<br><br><br>
+<b>Uso</b>:<br><br>
 Para iniciar o servidor de desenvolvimento, utilize o seguinte comando:<br>
 npm run dev
