@@ -8,7 +8,7 @@ Navegue até o diretório do projeto:<br> cd growtwitter
 <br><br>
 Instale as dependências:<br> npm install
 <br><br>
-<i>Certifique-se de ter o Node.js e o npm instalados em sua máquina.<i>
+<i>Certifique-se de ter o Node.js e o npm instalados em sua máquina.</i>
 <br><br><br>
 <b>Uso</b>:<br>
 Para iniciar o servidor de desenvolvimento, utilize o seguinte comando:<br>
